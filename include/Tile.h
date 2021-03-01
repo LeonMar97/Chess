@@ -1,18 +1,17 @@
 #include <vector>
+#include <string> 
 #include<iostream>
+#include <stdlib.h>
 #include <SFML/Graphics.hpp>
+#pragma once
 
 class Tile {
+	public:
 
-public:
-
-	Tile();
-	~Tile();
+		Tile(int color,sf::Vector2f size);//constarctor gets size and color
 
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~private memeber~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-private:
-
-		sf:Vector2i m_Size
-		sf:Recatangle m_Tile;
+	private:
+		sf::RectangleShape m_Tile;
+		sf::Vector2f m_Size;
 };

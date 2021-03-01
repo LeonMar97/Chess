@@ -1,2 +1,7 @@
 #include "Tile.h"
-Tile():
+
+	Tile(int color,sf::Vector2f size)
+	
+	{
+
+}
