@@ -1,7 +1,10 @@
 #include "Tile.h"
 
-	Tile(int color,sf::Vector2f size)
-	
+	Tile::Tile(sf::Color cr, sf::Vector2f size, sf::Vector2f pos)
 	{
-
-}
+		m_Tile.setPosition(pos);
+		m_Tile.setFillColor(cr);
+		m_Tile.setOutlineThickness(3);
+		m_Tile.setSize(size);
+		
+	}

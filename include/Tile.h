@@ -8,10 +8,9 @@
 class Tile {
 	public:
 
-		Tile(int color,sf::Vector2f size);//constarctor gets size and color
+		Tile(sf::Color cr,sf::Vector2f size,sf::Vector2f pos);//constarctor gets size and color
 
 
 	private:
 		sf::RectangleShape m_Tile;
-		sf::Vector2f m_Size;
 };
