@@ -1,1 +1,1 @@
-target_include_directories(chess PRIVATE ${CMAKE_CURRENT_FUNCTION_LIST_DIR})
+target_include_directories(chess PRIVATE ${CMAKE_CURRENT_LIST_DIR})
