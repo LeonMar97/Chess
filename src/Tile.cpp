@@ -6,5 +6,9 @@
 		m_Tile.setFillColor(cr);
 		m_Tile.setOutlineThickness(3);
 		m_Tile.setSize(size);
+		m_Tile.setOutlineColor(sf::Color::Black);
 		
+	}
+	void Tile:: draw_Tile(sf::RenderWindow& game_Window)const {
+		game_Window.draw(m_Tile);
 	}

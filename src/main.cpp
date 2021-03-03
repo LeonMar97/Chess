@@ -3,9 +3,9 @@
 #include <Windows.h>
 #include "Controller.h"
 int main() {
-	
+	Controller game;
 
-
-	std::cout << "hello world";
+	game.start_Game();
+	//std::cout << "hello world";
 	exit(EXIT_SUCCESS);
 }
