@@ -3,4 +3,5 @@ target_sources (chess PRIVATE
 								"Board.cpp"
 								"Tile.cpp"
 								"Controller.cpp"
-								"Tool.cpp")
+								"Tool.cpp"
+								"King.cpp")

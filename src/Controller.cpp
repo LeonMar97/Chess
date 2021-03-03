@@ -9,14 +9,18 @@ Controller::Controller()
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 void Controller::start_Game(){
-	Tile x(sf::Color::Red,sf::Vector2f(100.f, 100.f), sf::Vector2f(100.f, 0.f));
+	Tile x(sf::Color::Red,sf::Vector2f(100.f, 100.f), sf::Vector2f(0.f, 0.f));
 	
 	sf::Event event;
-	sf::Texture* pic;
-	pic = new sf::Texture;
-	pic->loadFromFile("pieces.png");
+	sf::Texture pic;
+	//pic = new sf::Texture;
+	pic.loadFromFile("pieces.png");
 	//*pic->getSize
-	Tool b(x,*pic);
+	//Tool 
+	//King b(x, pic, sf::Vector2f(0, 0),0);
+	std::vector<std::vector<Tool*>>chess_Pieces[2];
+	chess_Pieces[0].resize(5);
+	chess_Pieces[1].resize(5);
 	
 
 

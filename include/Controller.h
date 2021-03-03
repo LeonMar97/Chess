@@ -3,6 +3,8 @@
 #include <iostream>
 #include <Windows.h>
 #include "Tool.h"
+#include "King.h"
+#pragma once
 
 class Controller {
 
