@@ -1,4 +1,5 @@
 #include "Controller.h"
+
 #pragma once
 
 Controller::Controller()
@@ -8,14 +9,24 @@ Controller::Controller()
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 void Controller::start_Game(){
-	//Tile x(sf::Color::Red,sf::Vector2f(100.f, 100.f), sf::Vector2f(1.f, 100.f));
+	Tile x(sf::Color::Red,sf::Vector2f(100.f, 100.f), sf::Vector2f(100.f, 0.f));
+	
 	sf::Event event;
+	sf::Texture* pic;
+	pic = new sf::Texture;
+	pic->loadFromFile("pieces.png");
+	//*pic->getSize
+	Tool b(x,*pic);
+	
+
+
 
 	while (m_Game_Window.isOpen()) {
 		
 		m_Game_Window.clear(sf::Color::Red);
 		//x.draw_Tile(m_Game_Window);
 		m_Board.draw_Board(m_Game_Window);
+		b.draw_Tool(m_Game_Window);
 		m_Game_Window.display();
 		while (m_Game_Window.pollEvent(event))
 		{

@@ -4,7 +4,7 @@
 	{
 		m_Tile.setPosition(pos);
 		m_Tile.setFillColor(cr);
-		m_Tile.setOutlineThickness(3);
+		//m_Tile.setOutlineThickness(3);
 		m_Tile.setSize(size);
 		m_Tile.setOutlineColor(sf::Color::Black);
 		
