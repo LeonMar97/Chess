@@ -5,3 +5,4 @@ target_sources (chess PRIVATE
 								"Controller.cpp"
 								"Tool.cpp"
 								"King.cpp")
+								#"Textures.cpp")

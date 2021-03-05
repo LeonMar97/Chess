@@ -9,6 +9,7 @@ class Board{
 
 public:
 	void draw_Board(sf::RenderWindow& game_Window)const;
+	Tile& get_Tile(sf::Vector2i pos) { return m_Board[pos.x][pos.y]; }const
 	Board();
 	
 private:

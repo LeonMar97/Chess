@@ -11,18 +11,24 @@ Controller::Controller()
 void Controller::start_Game(){
 	Tile x(sf::Color::Red,sf::Vector2f(100.f, 100.f), sf::Vector2f(0.f, 0.f));
 	
-	sf::Event event;
-	sf::Texture pic;
-	//pic = new sf::Texture;
-	pic.loadFromFile("pieces.png");
-	//*pic->getSize
-	//Tool 
-	//King b(x, pic, sf::Vector2f(0, 0),0);
-	std::vector<std::vector<Tool*>>chess_Pieces[2];
-	chess_Pieces[0].resize(5);
-	chess_Pieces[1].resize(5);
 	
+	std::vector<std::vector<Tool*>>chess_Pieces[2];
+	//chess_Pieces[0].resize(5);
+	//chess_Pieces[1].resize(5);
 
+	sf::Texture pic;
+	sf::Image im;
+	im.loadFromFile("pieces.png");
+	 
+	//pic.loadFromFile("pieces.png");
+	
+	pic.setSmooth(true);
+	//King b(x, pic, sf::Vector2f(0, 0), 0);
+	pic.loadFromImage(im, sf::IntRect(0, 0, 350, 350));
+
+	King b(m_Board.get_Tile(sf::Vector2i(0,0)),pic,0);
+
+	sf::Event event;
 
 
 	while (m_Game_Window.isOpen()) {
@@ -41,8 +47,22 @@ void Controller::start_Game(){
 		}
 	}
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+void Controller::create_Tool_Pieces() {
+	unsigned int piece_Amount_Max = 1/*amount of objects 1 is the minumum */, piece_Amount = 0;
+
+	sf::Texture* pic=new sf::Texture;
+	pic->loadFromFile("pieces.png");
+	pic->setSmooth(true);
+	sf::Color cr[2] = { sf::Color::White,sf::Color::Black };
+
+	//m_Chess_Pieces[i][current_Tool].push_back(King(m_Board.get_Tile(sf::Vector2i(0, 0)),pic,sf::Vector2f() ))
 
 
+
+
+
+}
 
 
 
