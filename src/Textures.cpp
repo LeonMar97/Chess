@@ -1,4 +1,5 @@
 #include "Textures.h" 
+#include "Macros.h"
 #pragma once
 Textures& Textures::instance() {
 	static Textures  all_S;
@@ -6,48 +7,68 @@ Textures& Textures::instance() {
 }
 //set textures for all object in the game once
  Textures::Textures() {
-	 m_Font.loadFromFile("Love America.ttf");//setting one font
-	 std::vector<std::string>names[] = {
-						   {"wall.png"},
-						   {"ladder.png"},
-						   {"pole.png"},
-						   {"money.png"},
-						   {"gift.png"},
-						   {"smart_Enemy.png","smart_pole.png"},
-						   {"med_Enemy.png","med_pole.png"},
-						   {"stupid_Enemy.png","stupid_pole.png"},
-						   {"cjsk.png","cj2.png"},
-						   {"background2.png"},
-						   {"scoreBoard.png"},
-						   {"bg_23.png"},
-							{"WINNER.png","next_Lvl.png"},
-							{"Wasted.png"} };
+	 //m_Font.loadFromFile("Love America.ttf");//setting one font
+	
 
-	int i, j;
+	 sf::Texture pic;
+	 sf::Image im;
+	 im.loadFromFile("pieces.png");
+	 //resizing the tools by color..
+	 m_Tool_Tex[white].resize(different_Tools);
+	 m_Tool_Tex[black].resize(different_Tools);
+	 
+	 //setting white  texture.. 
+	 m_Tool_Tex[white][king].loadFromImage(im, sf::IntRect(0, 0, toolSize.x,toolSize.y));
+	 
+	 m_Tool_Tex[white][queen].loadFromImage(im, sf::IntRect(320, 0, 350, 350));
+	 
+	 m_Tool_Tex[white][bishop].loadFromImage(im, sf::IntRect(650, 0, 350, 350));
+	 m_Tool_Tex[white][knight].loadFromImage(im, sf::IntRect(1000, 0, 350, 350));
+	 m_Tool_Tex[white][rook].loadFromImage(im, sf::IntRect(1350, 0, 350, 350));
+	 m_Tool_Tex[white][pawn].loadFromImage(im, sf::IntRect(1650, 0, 350, 350));
 
-	sf::Texture *pic;
-	for (i = walls; i < NUM_OF_TEXTURE_OBJECTS; i++) {
-		for (j = 0; j < names[i].size(); j++) {
-			pic = new sf::Texture;
-			pic->loadFromFile(names[i][j]);
-			m_All_textures[i].push_back(pic);
+
+	 m_Tool_Tex[black][king].loadFromImage(im, sf::IntRect(0, 350, toolSize.x, toolSize.y));
+	 m_Tool_Tex[black][queen].loadFromImage(im, sf::IntRect(320, 350, 350, 350));
+	 m_Tool_Tex[black][bishop].loadFromImage(im, sf::IntRect(650, 350, 350, 350));
+	 m_Tool_Tex[black][knight].loadFromImage(im, sf::IntRect(1000, 350, 350, 350));
+	 m_Tool_Tex[black][rook].loadFromImage(im, sf::IntRect(1350, 350, 350, 350));
+	 m_Tool_Tex[black][pawn].loadFromImage(im, sf::IntRect(1650, 350, 350, 350));
+	 /*
+	 m_Tool_Tex[white][knight].loadFromImage(im, sf::IntRect(350, 0, 350, 350));
+
+
+	 m_Tool_Tex[white][rook].loadFromImage(im, sf::IntRect(350, 0, 350, 350));
+
+
+	 m_Tool_Tex[white][pawn].loadFromImage(im, sf::IntRect(350, 0, 350, 350));
+	 */
+
+
+
+	 //setting all the textures to smooth
+	 for (unsigned int i = 0; i < 2; i++) {
+		 for (unsigned int j = 0; j < different_Tools; j++) {
+			 m_Tool_Tex[i][j].setSmooth(true);
+		 }
+	 }
+	 /*
+	 pic.loadFromImage(im, sf::IntRect(0, 0, 350, 350));
+	 pic.loadFromImage(im, sf::IntRect(0, 0, 350, 350));
+	 pic.loadFromImage(im, sf::IntRect(0, 0, 350, 350));
+	 pic.loadFromImage(im, sf::IntRect(0, 0, 350, 350));
+	 */
+	
+
+	
+	
+			
+			
 		}
 
-	}
+	
 
 
 
 	
 
-
-}
- Textures::~Textures()
- {
-	 for (int i = 0; i < m_All_textures->size(); i++) {
-		 for (int j = 0; j < m_All_textures[i].size(); j++)
-			 delete m_All_textures[i][j];
-
-		m_All_textures[i].clear();
-	 }
-	 m_All_textures->clear();
- }
