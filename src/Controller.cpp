@@ -14,9 +14,11 @@ void Controller::start_Game(){
 	sf::Event event;
 	while (m_Game_Window.isOpen()) {
 		
-		m_Game_Window.clear(sf::Color::Red);
-		//x.draw_Tile(m_Game_Window);
+		m_Game_Window.clear();
+		
 		m_Board.draw_Board(m_Game_Window);
+		
+
 		draw_All_Tools();
 		m_Game_Window.display();
 		while (m_Game_Window.pollEvent(event))
@@ -30,6 +32,7 @@ void Controller::start_Game(){
 	}
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//creating tool objects..
 void Controller::create_Tool_Pieces() {
 
 
@@ -86,15 +89,21 @@ void Controller::create_Tool_Pieces() {
 	m_Chess_Pieces[1][rook].push_back(new Rook(m_Board.get_Tile(sf::Vector2i(7, 0)),
 		Textures::instance().get_Textures(black, rook), black));
 
-
-	for (unsigned int i = 0; i < 2; i++) {
+	//used abs because the whites are on bottom so the colors are fliped 
+	for ( int i = 0; i < 2; i++) {
 		for (unsigned int k = 0; k < 8; k++) {
 
 			m_Chess_Pieces[i][pawn].push_back(new Pawn(m_Board.get_Tile(sf::Vector2i(k, (i * 5) + 1)),
-				Textures::instance().get_Textures(i, pawn), i));
+				Textures::instance().get_Textures(std::abs(i-1), pawn), std::abs(i - 1)));
 
 		}
 	}
+	
+
+
+
+
+
 }
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	void Controller::draw_All_Tools() {
@@ -120,7 +129,7 @@ void Controller::create_Tool_Pieces() {
 
 
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 

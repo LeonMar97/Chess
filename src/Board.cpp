@@ -4,7 +4,7 @@
 Board::Board() {
 	
 	unsigned int pos = 0;
-	sf::Color Current_Color[2] = { sf::Color(25, 255, 255) ,sf::Color(1,100,0,100) };//easier to set color using it
+	const sf::Color Current_Color[2] = { sf::Color(0xF5, 0xF5, 0xF5) ,sf::Color(0xD2, 0x69, 0x1E) };//easier to set color using it
 	m_Board.resize(8);
 	for (unsigned int i=0; i < 8;i++) {
 		//m_Board[i].resize(8);
