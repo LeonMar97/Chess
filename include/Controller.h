@@ -25,6 +25,8 @@ public:
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~private functions~~~~~~~~~~//
 private:
 	void create_Tool_Pieces();
+	void draw_All_Tools() ;
+
 private:
 
 	sf::RenderWindow m_Game_Window;

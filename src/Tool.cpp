@@ -10,7 +10,7 @@ Tool::Tool( Tile& cur_Tile,const  sf::Texture &tex,bool color)
 {
 	
 //	m_Tool.setTextureRect(sf::IntRect(loc_In_Sprite.x,loc_In_Sprite.y,350, 350));//(first,second parameters are starting point the third and forth are the amount 
-	m_Tool.setScale(cur_Tile.get_Tile().getScale().x  /3.5, cur_Tile.get_Tile().getScale().y / 3.5);
+	m_Tool.setScale(cur_Tile.get_Tile().getScale().x  /3.3, cur_Tile.get_Tile().getScale().y / 3.3);
 	m_Tool.setPosition(cur_Tile.get_Tile().getPosition());
 	
 }
